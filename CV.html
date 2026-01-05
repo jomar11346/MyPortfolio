@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jomar Nobleza - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+        }
+        
+        .header {
+            border-bottom: 3px solid #f97316;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .header-photo {
+            flex-shrink: 0;
+        }
+        
+        .header-photo img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid #f97316;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #1f2937;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .header .title {
+            font-size: 18px;
+            color: #f97316;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 12px;
+            color: #4b5563;
+        }
+        
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #f97316;
+            font-weight: bold;
+            border-bottom: 2px solid #f97316;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .profile p {
+            text-align: justify;
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .education-item, .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .education-item h3 {
+            font-size: 16px;
+            color: #1f2937;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .education-item .institution {
+            font-size: 14px;
+            color: #f97316;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .education-item .period {
+            font-size: 12px;
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category h4 {
+            font-size: 14px;
+            color: #1f2937;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .skill-list li {
+            font-size: 12px;
+            color: #4b5563;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #f97316;
+        }
+        
+        .projects-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #f97316;
+        }
+        
+        .projects-item h4 {
+            font-size: 14px;
+            color: #1f2937;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .projects-item p {
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
+        }
+        
+        .social-links a {
+            color: #f97316;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .signature-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .signature-section .sincerely {
+            font-size: 14px;
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .signature-section .signature-img {
+            max-width: 200px;
+            height: auto;
+            margin: 15px auto;
+            display: block;
+            filter: contrast(1.3) brightness(0.9);
+            mix-blend-mode: multiply;
+            background: transparent;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .signature-section .signature-name {
+            font-size: 18px;
+            color: #1f2937;
+            font-weight: bold;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .container {
+                padding: 20px;
+            }
+            .header-photo img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .header-photo {
+                order: -1;
+                margin-bottom: 15px;
+            }
+            .header-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="header-content">
+                <h1>JOMAR NOBLEZA</h1>
+                <div class="title">Information Technology Student</div>
+                <div class="contact-info">
+                    <div>
+                        <strong>Email:</strong> jomarnobleza011@gmail.com
+                    </div>
+                    <div>
+                        <strong>Phone:</strong> 09317222221
+                    </div>
+                    <div>
+                        <strong>Location:</strong> Sitio Agbay-Ang Brgy. San Rafael, Dumalag, Capiz, 5813
+                    </div>
+                </div>
+                <div class="social-links" style="margin-top: 10px;">
+                    <a href="https://www.facebook.com/jomar.febrio.nobleza/" target="_blank">Facebook</a> |
+                    <a href="https://www.instagram.com/jmr_nblz/" target="_blank">Instagram</a> |
+                    <a href="https://www.linkedin.com/in/jomar-nobleza-a80b96385/" target="_blank">LinkedIn</a> |
+                    <a href="https://github.com/jomar11346/MyPortfolio" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="header-photo">
+                <img src="Screenshot 2025-11-12 202105.png" alt="Jomar Nobleza">
+            </div>
+        </div>
+        
+        <!-- Profile Section -->
+        <div class="section">
+            <div class="section-title">Professional Profile</div>
+            <div class="profile">
+                <p>
+                    A dedicated and passionate 3rd Year Information Technology Student at Filamer Christian University 
+                    with a deep commitment to technology and innovation. My journey in Information Technology is driven 
+                    by curiosity and a desire to create meaningful digital solutions that make a real impact. With over 
+                    3 years of learning experience, I have developed expertise in web development, cybersecurity, and 
+                    modern web technologies. I am passionate about creating innovative digital solutions through software 
+                    development, cybersecurity, and modern web technologies.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <h3>Bachelor of Science in Information Technology</h3>
+                <div class="institution">Filamer Christian University</div>
+                <div class="period">Currently Enrolled - 3rd Year</div>
+            </div>
+        </div>
+        
+        <!-- Technical Skills Section -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Web Development</h4>
+                    <ul class="skill-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Cybersecurity</h4>
+                    <ul class="skill-list">
+                        <li>Security Assessments</li>
+                        <li>Network Security</li>
+                        <li>IT Infrastructure Security</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Management</h4>
+                    <ul class="skill-list">
+                        <li>Data Analysis</li>
+                        <li>Database Management</li>
+                        <li>Data Storage & Retrieval</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>System Administration</h4>
+                    <ul class="skill-list">
+                        <li>System Management</li>
+                        <li>Network Administration</li>
+                        <li>IT Consulting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Projects Section -->
+        <div class="section">
+            <div class="section-title">Projects & Experience</div>
+            <div class="projects-item">
+                <h4>Portfolio Website</h4>
+                <p>
+                    Developed a professional portfolio website showcasing skills, projects, and contact information. 
+                    Implemented responsive design using HTML, CSS, and JavaScript with modern UI/UX principles.
+                </p>
+            </div>
+            <div class="projects-item">
+                <h4>Cybersecurity Services</h4>
+                <p>
+                    Conducted security assessments for local businesses, focusing on IT infrastructure and providing 
+                    recommendations to enhance security measures.
+                </p>
+            </div>
+            <div class="projects-item">
+                <h4>IT Consulting</h4>
+                <p>
+                    Provided consulting services for small businesses on leveraging technology to improve operations, 
+                    enhance security, and adopt new software solutions.
+                </p>
+            </div>
+            <div class="projects-item">
+                <h4>Volunteering</h4>
+                <p>
+                    Offered IT skills to non-profit organizations that lack resources to manage their technology needs effectively.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Additional Information Section -->
+        <div class="section">
+            <div class="section-title">Additional Information</div>
+            <div style="font-size: 12px; color: #4b5563; line-height: 1.8;">
+                <p><strong>Years of Learning:</strong> 3+ years</p>
+                <p><strong>Technologies Mastered:</strong> 6+ technologies</p>
+                <p><strong>Projects Completed:</strong> 10+ projects</p>
+                <p><strong>Core Values:</strong> Innovation, Quality, Dedication to Excellence</p>
+            </div>
+        </div>
+        
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div class="sincerely">Sincerely Yours,</div>
+            <img src="Screenshot 2025-11-12 205432.png" alt="Signature" class="signature-img">
+            <div class="signature-name">JOMAR NOBLEZA</div>
+        </div>
+    </div>
+</body>
+</html>
+
