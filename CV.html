@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jomar Nobleza - Curriculum Vitae</title>
+    <style>
+        @page {
+            margin: 1cm;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        .header {
+            border-bottom: 3px solid #f97316;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 18px;
+            color: #f97316;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            border-bottom: 2px solid #f97316;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .section-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-item {
+            padding: 8px 12px;
+            background: #fff7ed;
+            border-left: 3px solid #f97316;
+            font-weight: 500;
+        }
+        .service-item, .education-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .service-item::before, .education-item::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #f97316;
+            font-weight: bold;
+        }
+        .service-title, .education-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        .service-description, .education-description {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        @media print {
+            body {
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">JOMAR NOBLEZA</div>
+        <div class="title">Information Technology Student | BSIT</div>
+        <div class="contact-info">
+            <span>📧 jomarnobleza011@gmail.com</span>
+            <span>📱 09317222221</span>
+            <span>📍 Sitio Agbay-Ang Brgy. San Rafael, Dumalag, Capiz, 5813</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL SUMMARY</div>
+        <div class="section-content">
+            A passionate BSIT Student with a deep commitment to technology and innovation. 
+            My journey in Information Technology is driven by curiosity and a desire to create 
+            meaningful digital solutions that make a real impact. Passionate about creating 
+            innovative digital solutions through software development, cybersecurity, and modern 
+            web technologies.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Cybersecurity</div>
+            <div class="skill-item">Data Analysis</div>
+            <div class="skill-item">Network Security</div>
+            <div class="skill-item">System Administration</div>
+            <div class="skill-item">Database Management</div>
+            <div class="skill-item">IT Consulting</div>
+            <div class="skill-item">Software Development</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">SERVICES & EXPERTISE</div>
+        <div class="service-item">
+            <div class="service-title">Cybersecurity Services</div>
+            <div class="service-description">
+                Conduct security assessments for local businesses, focusing on their IT infrastructure 
+                and providing recommendations to enhance their security.
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-title">IT Consulting</div>
+            <div class="service-description">
+                Provide consulting services for small businesses on how to leverage technology to improve 
+                their operations, enhance security, or adopt new software solutions.
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-title">Software Development</div>
+            <div class="service-description">
+                Participate in freelance projects or internships where I can develop software applications 
+                (web apps, mobile apps) for real clients.
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-title">Volunteering</div>
+            <div class="service-description">
+                Offer IT skills to non-profit organizations that may lack the resources to manage their 
+                technology needs effectively.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TECHNICAL EXPERTISE AREAS</div>
+        <div class="section-content">
+            <div class="service-item">
+                <div class="service-title">Web Development</div>
+                <div class="service-description">Modern web technologies and frameworks</div>
+            </div>
+            <div class="service-item">
+                <div class="service-title">Cybersecurity</div>
+                <div class="service-description">Protecting digital assets and data</div>
+            </div>
+            <div class="service-item">
+                <div class="service-title">Data Analysis</div>
+                <div class="service-description">Extracting insights from complex data</div>
+            </div>
+            <div class="service-item">
+                <div class="service-title">Network Security</div>
+                <div class="service-description">Securing network infrastructure</div>
+            </div>
+            <div class="service-item">
+                <div class="service-title">System Administration</div>
+                <div class="service-description">Managing and optimizing systems</div>
+            </div>
+            <div class="service-item">
+                <div class="service-title">Database Management</div>
+                <div class="service-description">Efficient data storage and retrieval</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL STATISTICS</div>
+        <div class="section-content" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+            <div>
+                <strong>3+ Years</strong> of Learning Experience
+            </div>
+            <div>
+                <strong>6+ Technologies</strong> Mastered
+            </div>
+            <div>
+                <strong>10+ Projects</strong> Completed
+            </div>
+            <div>
+                <strong>100% Dedication</strong> to Excellence
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">AVAILABILITY</div>
+        <div class="section-content">
+            Currently available for opportunities, internships, freelance projects, and collaborations 
+            in software development, cybersecurity, and IT consulting.
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center; color: #9ca3af; font-size: 12px;">
+        This CV was generated from my portfolio website. For the latest updates, please visit my portfolio.
+    </div>
+</body>
+</html>
+
