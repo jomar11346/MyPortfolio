@@ -12,15 +12,15 @@
     <header class="w-full bg-white/5 backdrop-blur-lg border-b border-white/10 sticky top-0 z-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25 group-hover:scale-105 transition">
-                    <span class="text-white font-bold text-lg">J</span>
+                <div class="w-10 h-10 bg-gradient-to-br from-red-700 to-red-800 rounded-lg flex items-center justify-center shadow-lg shadow-red-700/25 group-hover:scale-105 transition">
+                    <span class="text-white font-bold text-3xl">J</span>
                 </div>
                 <div>
-                    <p class="text-sm font-semibold text-white">Jomar Nobleza</p>
-                    <p class="text-xs text-slate-300">IT Student</p>
+                    <p class="text-xl font-semibold text-white">Jomar Nobleza</p>
+                    <p class="text-base text-slate-300">IT Student</p>
                 </div>
             </a>
-            <a href="index.html" class="text-sm font-semibold text-orange-300 hover:text-white transition">
+            <a href="index.html" class="text-xl font-semibold text-red-300 hover:text-white transition">
                 ← Back to Portfolio
             </a>
         </div>
@@ -29,72 +29,128 @@
     <main class="relative overflow-hidden">
         <!-- soft glow -->
         <div class="pointer-events-none absolute inset-0">
-            <div class="absolute -top-24 -left-20 w-72 h-72 bg-orange-500/20 blur-3xl rounded-full"></div>
-            <div class="absolute bottom-10 right-0 w-80 h-80 bg-orange-600/20 blur-3xl rounded-full"></div>
+            <div class="absolute -top-24 -left-20 w-72 h-72 bg-red-700/20 blur-3xl rounded-full"></div>
+            <div class="absolute bottom-10 right-0 w-80 h-80 bg-red-800/20 blur-3xl rounded-full"></div>
         </div>
 
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
             <section class="mb-10 sm:mb-14">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-orange-200 text-xs sm:text-sm font-semibold mb-4">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-red-200 text-base sm:text-lg font-semibold mb-4">
                     Learning Journey
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                     Certificates & Achievements
                 </h1>
                 <!-- Certificates grid -->
             <section class="grid gap-6 sm:gap-8 md:grid-cols-2">
-                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-orange-500/10 transition hover:border-orange-400/50 hover:-translate-y-1">
+                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-red-700/10 transition hover:border-red-700/50 hover:-translate-y-1">
                     <div class="relative overflow-hidden">
-                        <img src="certificate/Screenshot 2026-01-06 184157.png" alt="Using Veo 3 for AI-Generated Video certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <img src="certificate/Screenshot 2026-01-06 184157.png" alt="Using Veo 3 for AI-Generated Video certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 cursor-pointer image-modal-trigger relative z-10" data-image="certificate/Screenshot 2026-01-06 184157.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition pointer-events-none"></div>
                     </div>
-                    <figcaption class="px-4 py-3 text-sm text-slate-200 border-t border-white/10">
+                    <figcaption class="px-4 py-3 text-lg text-slate-200 border-t border-white/10">
                         Using Veo 3 for AI-Generated Video
                     </figcaption>
                 </figure>
 
-                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-orange-500/10 transition hover:border-orange-400/50 hover:-translate-y-1">
+                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-red-700/10 transition hover:border-red-700/50 hover:-translate-y-1">
                     <div class="relative overflow-hidden">
-                        <img src="certificate/Screenshot 2026-01-06 184218.png" alt="Learning to Teach Online certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <img src="certificate/Screenshot 2026-01-06 184218.png" alt="Learning to Teach Online certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 cursor-pointer image-modal-trigger relative z-10" data-image="certificate/Screenshot 2026-01-06 184218.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition pointer-events-none"></div>
                     </div>
-                    <figcaption class="px-4 py-3 text-sm text-slate-200 border-t border-white/10">
+                    <figcaption class="px-4 py-3 text-lg text-slate-200 border-t border-white/10">
                         Learning to Teach Online
                     </figcaption>
                 </figure>
 
-                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-orange-500/10 transition hover:border-orange-400/50 hover:-translate-y-1">
+                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-red-700/10 transition hover:border-red-700/50 hover:-translate-y-1">
                     <div class="relative overflow-hidden">
-                        <img src="certificate/Screenshot 2026-01-06 184248.png" alt="OpenAI API: Image Generation with DALL-E certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <img src="certificate/Screenshot 2026-01-06 184248.png" alt="OpenAI API: Image Generation with DALL-E certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 cursor-pointer image-modal-trigger relative z-10" data-image="certificate/Screenshot 2026-01-06 184248.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition pointer-events-none"></div>
                     </div>
-                    <figcaption class="px-4 py-3 text-sm text-slate-200 border-t border-white/10">
+                    <figcaption class="px-4 py-3 text-lg text-slate-200 border-t border-white/10">
                         OpenAI API: Image Generation with DALL-E
                     </figcaption>
                 </figure>
 
-                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-orange-500/10 transition hover:border-orange-400/50 hover:-translate-y-1">
+                <figure class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-red-700/10 transition hover:border-red-700/50 hover:-translate-y-1">
                     <div class="relative overflow-hidden">
-                        <img src="certificate/Screenshot 2026-01-06 184334.png" alt="Boosting Your Influence Skills with Generative AI certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <img src="certificate/Screenshot 2026-01-06 184334.png" alt="Boosting Your Influence Skills with Generative AI certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 cursor-pointer image-modal-trigger relative z-10" data-image="certificate/Screenshot 2026-01-06 184334.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition pointer-events-none"></div>
                     </div>
-                    <figcaption class="px-4 py-3 text-sm text-slate-200 border-t border-white/10">
+                    <figcaption class="px-4 py-3 text-lg text-slate-200 border-t border-white/10">
                         Boosting Your Influence Skills with Generative AI
                     </figcaption>
                 </figure>
 
-                <figure class="md:col-span-2 group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-orange-500/10 transition hover:border-orange-400/50 hover:-translate-y-1">
+                <figure class="md:col-span-2 group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-lg shadow-red-700/10 transition hover:border-red-700/50 hover:-translate-y-1">
                     <div class="relative overflow-hidden">
-                        <img src="certificate/Screenshot 2026-01-06 184408.png" alt="Ignite Bootcamp - Venture Idea Development Philippines certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <img src="certificate/Screenshot 2026-01-06 184408.png" alt="Ignite Bootcamp - Venture Idea Development Philippines certificate" class="w-full h-full object-cover transition duration-500 group-hover:scale-105 cursor-pointer image-modal-trigger relative z-10" data-image="certificate/Screenshot 2026-01-06 184408.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition pointer-events-none"></div>
                     </div>
-                    <figcaption class="px-4 py-3 text-sm text-slate-200 border-t border-white/10">
+                    <figcaption class="px-4 py-3 text-lg text-slate-200 border-t border-white/10">
                         Ignite Bootcamp - Venture Idea Development Philippines
                     </figcaption>
                 </figure>
             </section>
         </div>
     </main>
+
+    <!-- Image Modal/Lightbox -->
+    <div id="imageModal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-7xl w-full h-full flex items-center justify-center">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-4 right-4 z-10 w-14 h-14 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-white/20 group">
+                <svg class="w-8 h-8 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <!-- Full-size Image -->
+            <img id="modalImage" src="" alt="Full view" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
+        </div>
+    </div>
+
+    <script>
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.getElementById('closeModal');
+        const imageTriggers = document.querySelectorAll('.image-modal-trigger');
+
+        // Open modal when image is clicked
+        imageTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const imageSrc = this.getAttribute('data-image');
+                modalImage.src = imageSrc;
+                modalImage.alt = this.alt;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close modal functions
+        function closeImageModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        closeModal.addEventListener('click', closeImageModal);
+
+        // Close on background click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeImageModal();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>
 

@@ -12,15 +12,15 @@
     <header class="w-full bg-white/5 backdrop-blur-lg border-b border-white/10 sticky top-0 z-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25 group-hover:scale-105 transition">
-                    <span class="text-white font-bold text-lg">J</span>
+                <div class="w-10 h-10 bg-gradient-to-br from-red-700 to-red-800 rounded-lg flex items-center justify-center shadow-lg shadow-red-700/25 group-hover:scale-105 transition">
+                    <span class="text-white font-bold text-3xl">J</span>
                 </div>
                 <div>
-                    <p class="text-sm font-semibold text-white">Jomar Nobleza</p>
-                    <p class="text-xs text-slate-300">IT Student</p>
+                    <p class="text-xl font-semibold text-white">Jomar Nobleza</p>
+                    <p class="text-base text-slate-300">IT Student</p>
                 </div>
             </a>
-            <a href="index.html" class="text-sm font-semibold text-orange-300 hover:text-white transition">
+            <a href="index.html" class="text-xl font-semibold text-red-300 hover:text-white transition">
                 ← Back to Portfolio
             </a>
         </div>
@@ -29,71 +29,71 @@
     <main class="relative overflow-hidden">
         <!-- soft glow background -->
         <div class="pointer-events-none absolute inset-0">
-            <div class="absolute -top-24 -left-16 w-72 h-72 bg-orange-500/20 blur-3xl rounded-full"></div>
-            <div class="absolute bottom-0 right-0 w-80 h-80 bg-orange-600/20 blur-3xl rounded-full"></div>
+            <div class="absolute -top-24 -left-16 w-72 h-72 bg-red-700/20 blur-3xl rounded-full"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-red-800/20 blur-3xl rounded-full"></div>
         </div>
 
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
             <!-- Page header -->
             <section class="space-y-4">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-orange-200 text-xs sm:text-sm font-semibold">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-red-200 text-base sm:text-lg font-semibold">
                     Projects
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
                     My Projects
                 </h1>
                  <!-- Projects grid -->
             <section class="grid gap-8 lg:grid-cols-2">
                 <!-- Project 1 -->
-                <article class="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-xl shadow-slate-900/40 transition hover:-translate-y-1 hover:border-orange-400/60">
+                <article class="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-xl shadow-slate-900/40 transition hover:-translate-y-1 hover:border-red-700/60">
                     <div class="relative overflow-hidden">
                         <!-- Replace project1.png with your actual first project screenshot filename -->
-                        <img src="Screenshot 2026-01-06 194332.png" alt="User management system dashboard" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105" />
+                        <img src="Screenshot 2026-01-06 194332.png" alt="User management system dashboard" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105 cursor-pointer image-modal-trigger" data-image="Screenshot 2026-01-06 194332.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-70 pointer-events-none"></div>
-                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full bg-slate-900/70 text-xs font-semibold text-orange-200 border border-white/10">
+                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                            <span class="px-3 py-1 rounded-full bg-slate-900/70 text-base font-semibold text-red-200 border border-white/10">
                                 Django CRUD System
                             </span>
-                            <span class="text-xs text-slate-200">Full-stack Web App</span>
+                            <span class="text-base text-slate-200">Full-stack Web App</span>
                         </div>
                     </div>
                     <div class="p-5 sm:p-6 space-y-4">
-                        <h2 class="text-3xl font-semibold text-white">User Management System</h2>
-                        <p class="text-2xl text-slate-200">
+                        <h2 class="text-4xl font-semibold text-white">User Management System</h2>
+                        <p class="text-3xl text-slate-200">
                             A CRUD-based web application for managing user profiles, including gender,
                             birthdate, address, and contact details with edit and delete actions.
                         </p>
                         <div class="flex flex-wrap gap-2 pt-1">
-                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-base font-semibold text-slate-100 border border-white/10">Django</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-base font-semibold text-slate-100 border border-white/10">Bootstrap</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-base font-semibold text-slate-100 border border-white/10">CRUD</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-lg font-semibold text-slate-100 border border-white/10">Django</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-lg font-semibold text-slate-100 border border-white/10">Bootstrap</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-lg font-semibold text-slate-100 border border-white/10">CRUD</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
-                <article class="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-xl shadow-slate-900/40 transition hover:-translate-y-1 hover:border-orange-400/60">
+                <article class="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-xl shadow-slate-900/40 transition hover:-translate-y-1 hover:border-red-700/60">
                     <div class="relative overflow-hidden">
-                        <!-- Replace project2.png with your actual second project screenshot filename -->
-                        <img src="Screenshot 2026-01-06 194249.png" alt="Online activities management system login screen" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105" />
+                        <!-- Video for project 2 -->
+                        <video src="506723467_8513506518773926_4521365424020577990_n.mp4" alt="Online activities management system login screen" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105 cursor-pointer video-modal-trigger" data-video="506723467_8513506518773926_4521365424020577990_n.mp4" poster="" muted loop></video>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent opacity-70 pointer-events-none"></div>
-                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full bg-slate-900/70 text-xs font-semibold text-orange-200 border border-white/10">
+                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                            <span class="px-3 py-1 rounded-full bg-slate-900/70 text-base font-semibold text-red-200 border border-white/10">
                                 Online Activities System
                             </span>
-                            <span class="text-xs text-slate-200">Authentication UI</span>
+                            <span class="text-base text-slate-200">Authentication UI</span>
                         </div>
                     </div>
                     <div class="p-5 sm:p-6 space-y-4">
-                        <h2 class="text-3xl font-semibold text-white">Online Activities Management System</h2>
-                        <p class="text-2xl text-slate-200">
+                        <h2 class="text-4xl font-semibold text-white">Online Activities Management System</h2>
+                        <p class="text-3xl text-slate-200">
                             A secure login interface for an activities management platform with a soft
                             gradient background and focused form design for better user experience.
                         </p>
                         <div class="flex flex-wrap gap-2 pt-1">
-                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-base font-semibold text-slate-100 border border-white/10">HTML &amp; CSS</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-base font-semibold text-slate-100 border border-white/10">UI Design</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-base font-semibold text-slate-100 border border-white/10">Authentication</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-lg font-semibold text-slate-100 border border-white/10">HTML &amp; CSS</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-lg font-semibold text-slate-100 border border-white/10">UI Design</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 text-lg font-semibold text-slate-100 border border-white/10">Authentication</span>
                         </div>
                     </div>
                 </article>
@@ -101,6 +101,84 @@
             </section>
         </div>
     </main>
+
+    <!-- Image/Video Modal/Lightbox -->
+    <div id="imageModal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-7xl w-full h-full flex items-center justify-center">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-4 right-4 z-10 w-14 h-14 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-white/20 group">
+                <svg class="w-8 h-8 text-white group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <!-- Full-size Image -->
+            <img id="modalImage" src="" alt="Full view" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl hidden" />
+            <!-- Full-size Video -->
+            <video id="modalVideo" src="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl hidden" controls autoplay></video>
+        </div>
+    </div>
+
+    <script>
+        // Image/Video Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeModal = document.getElementById('closeModal');
+        const imageTriggers = document.querySelectorAll('.image-modal-trigger');
+        const videoTriggers = document.querySelectorAll('.video-modal-trigger');
+
+        // Open modal when image is clicked
+        imageTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const imageSrc = this.getAttribute('data-image');
+                modalImage.src = imageSrc;
+                modalImage.alt = this.alt;
+                modalImage.classList.remove('hidden');
+                modalVideo.classList.add('hidden');
+                modalVideo.pause();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Open modal when video is clicked
+        videoTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const videoSrc = this.getAttribute('data-video');
+                modalVideo.src = videoSrc;
+                modalVideo.classList.remove('hidden');
+                modalImage.classList.add('hidden');
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close modal functions
+        function closeImageModal() {
+            modal.classList.add('hidden');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        closeModal.addEventListener('click', closeImageModal);
+
+        // Close on background click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeImageModal();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>
 
