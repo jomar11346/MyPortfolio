@@ -5,11 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Application Letter - Jomar Nobleza</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Print and PDF Styles for A4 */
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            #pdf-content {
+                display: block !important;
+                background: white !important;
+            }
+            .page-break {
+                page-break-before: always;
+                break-before: page;
+            }
+            .page-break-after {
+                page-break-after: always;
+                break-after: page;
+            }
+            .avoid-break {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .pdf-section {
+                page-break-after: auto;
+            }
+            .pdf-certificate-item,
+            .pdf-project-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .pdf-cover {
+                page-break-after: always;
+                break-after: page;
+            }
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* PDF Export Container */
+        #pdf-content {
+            background: white;
+            color: #1f2937;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            box-sizing: border-box;
+            overflow: visible;
+        }
+        
+        @media print {
+            #pdf-content {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                display: block !important;
+                visibility: visible !important;
+            }
+        }
+
+        .pdf-page {
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .pdf-cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: calc(100vh - 30mm);
+            padding: 40px 0;
+            page-break-after: always;
+            break-after: page;
+        }
+        
+        @media print {
+            .pdf-cover {
+                min-height: calc(297mm - 30mm);
+            }
+        }
+
+        .pdf-section {
+            margin-bottom: 0;
+            padding: 15px 0;
+            page-break-inside: avoid;
+        }
+
+        .pdf-section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #dc2626;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #dc2626;
+            letter-spacing: 0.5px;
+        }
+
+        .pdf-certificate-item {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .pdf-certificate-item img {
+            width: 100%;
+            max-width: 100%;
+            max-height: 180mm;
+            height: auto;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .pdf-certificate-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+
+        .pdf-project-item {
+            margin-bottom: 20px;
+            padding: 12px 15px;
+            border-left: 4px solid #dc2626;
+            background: #f9fafb;
+            border-radius: 4px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .pdf-project-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .pdf-project-desc {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .pdf-project-img {
+            width: 100%;
+            max-width: 100%;
+            max-height: 100mm;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            margin-top: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .pdf-resume-content {
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .pdf-resume-section {
+            margin-bottom: 15px;
+        }
+
+        .pdf-resume-section-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #dc2626;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #dc2626;
+            padding-bottom: 4px;
+        }
+
+        .pdf-resume-item {
+            margin-bottom: 8px;
+        }
+
+        .pdf-resume-item h4 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .pdf-resume-item p {
+            font-size: 11px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
     <!-- Top bar -->
-    <header class="w-full bg-white/5 backdrop-blur-lg border-b border-white/10 sticky top-0 z-20">
+    <header class="w-full bg-white/5 backdrop-blur-lg border-b border-white/10 sticky top-0 z-20 no-print">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3 group">
                 <div class="w-10 h-10 bg-gradient-to-br from-red-700 to-red-800 rounded-lg flex items-center justify-center shadow-lg shadow-red-700/25 group-hover:scale-105 transition">
@@ -20,20 +235,216 @@
                     <p class="text-base text-slate-300">IT Student</p>
                 </div>
             </a>
-            <a href="index.html" class="text-xl font-semibold text-red-300 hover:text-white transition">
-                ← Back to Portfolio
-            </a>
+            <div class="flex items-center gap-4">
+                <button onclick="downloadPDF()" class="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-red-700 to-red-800 text-lg font-semibold text-white shadow-lg shadow-red-700/25 hover:from-red-800 hover:to-red-900 transition">
+                    📥 Download PDF
+                </button>
+                <button onclick="printPDF()" class="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-slate-700 to-slate-800 text-lg font-semibold text-white shadow-lg shadow-slate-700/25 hover:from-slate-800 hover:to-slate-900 transition">
+                    🖨️ Print
+                </button>
+                <a href="index.html" class="text-xl font-semibold text-red-300 hover:text-white transition">
+                    ← Back to Portfolio
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="relative overflow-hidden">
         <!-- soft glow -->
-        <div class="pointer-events-none absolute inset-0">
+        <div class="pointer-events-none absolute inset-0 no-print">
             <div class="absolute -top-24 -left-16 w-64 h-64 bg-red-700/15 blur-3xl rounded-full"></div>
             <div class="absolute bottom-0 right-0 w-72 h-72 bg-red-800/15 blur-3xl rounded-full"></div>
         </div>
 
-        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8">
+        <!-- PDF Content (hidden for screen, shown for print/PDF) -->
+        <div id="pdf-content" style="display: none;">
+            <!-- Cover Page -->
+            <div class="pdf-cover page-break">
+                <div style="margin-bottom: 30px;">
+                    <div style="width: 80px; height: 80px; background: #dc2626; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: white; font-size: 36px; font-weight: bold;">J</span>
+                    </div>
+                </div>
+                <h1 style="font-size: 52px; font-weight: bold; color: #1f2937; margin-bottom: 15px; letter-spacing: 2px;">JOMAR NOBLEZA</h1>
+                <div style="width: 100px; height: 4px; background: #dc2626; margin: 0 auto 25px;"></div>
+                <p style="font-size: 22px; color: #dc2626; margin-bottom: 50px; font-weight: 600;">Information Technology Student</p>
+                <div style="margin-top: 80px; padding-top: 30px; border-top: 2px solid #e5e7eb;">
+                    <p style="font-size: 18px; color: #4b5563; margin-bottom: 8px; font-weight: 500;">Portfolio</p>
+                    <p style="font-size: 16px; color: #6b7280;">January 2025</p>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <div class="pdf-section page-break">
+                <div class="pdf-section-title">Introduction</div>
+                <div style="font-size: 15px; line-height: 1.8; color: #1f2937; padding: 15px 0 10px 0;">
+                    <p style="margin-bottom: 15px; font-size: 18px; font-weight: 600; color: #dc2626;">
+                        Hello! I'm Jomar Nobleza
+                    </p>
+                    <p style="margin-bottom: 0; text-align: justify; line-height: 1.9;">
+                        A dedicated BSIT student at Filamer Christian University. My journey in Information Technology is driven by a natural curiosity about how things work and a strong desire to build digital tools that solve everyday problems. For me, technology is more than just a course of study; it is a way to turn creative ideas into real-world solutions that can help people and businesses thrive in a digital age.
+
+                     I am deeply committed to continuous learning and staying updated with the latest innovations in the tech world. Whether I am developing software, designing systems, or exploring new hardware, my goal is always to create work that is both meaningful and impactful. I look forward to using the skills I’ve gained at Filamer Christian University to contribute to the ever-evolving field of technology and to make a positive difference through my work.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Resume -->
+            <div class="pdf-section page-break">
+                <div class="pdf-section-title">Resume</div>
+                <div class="pdf-resume-content">
+                    <div class="pdf-resume-section">
+                        <div style="display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; padding-bottom: 15px; border-bottom: 1px solid #e5e7eb;">
+                            <div style="flex: 1;">
+                                <h2 style="font-size: 20px; font-weight: bold; color: #1f2937; margin-bottom: 4px;">JOMAR NOBLEZA</h2>
+                                <p style="font-size: 14px; color: #dc2626; font-weight: 600; margin-bottom: 12px;">Information Technology Student</p>
+                                <div style="font-size: 10px; color: #4b5563; line-height: 1.7;">
+                                    <p><strong>Email:</strong> jomarnobleza011@gmail.com</p>
+                                    <p><strong>Phone:</strong> (+63) 931 722 2221</p>
+                                    <p><strong>Location:</strong> Sitio Agbay-Ang Brgy. San Rafael, Dumalag, Capiz, 5813</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="Screenshot 2025-11-12 202105.png" alt="Jomar Nobleza" style="width: 85px; height: 85px; object-fit: cover; border-radius: 6px; border: 2px solid #dc2626; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pdf-resume-section">
+                        <div class="pdf-resume-section-title">Professional Profile</div>
+                        <p style="font-size: 11px; text-align: justify; color: #4b5563; line-height: 1.7;">
+                            A dedicated and passionate 3rd Year Information Technology Student at Filamer Christian University 
+                            with a deep commitment to technology and innovation. My journey in Information Technology is driven 
+                            by curiosity and a desire to create meaningful digital solutions that make a real impact. With over 
+                            3 years of learning experience, I have developed expertise in web development, cybersecurity, and 
+                            modern web technologies. I am passionate about creating innovative digital solutions through software 
+                            development, cybersecurity, and modern web technologies.
+                        </p>
+                    </div>
+
+                    <div class="pdf-resume-section">
+                        <div class="pdf-resume-section-title">Education</div>
+                        <div class="pdf-resume-item">
+                            <h4>Bachelor of Science in Information Technology</h4>
+                            <p style="color: #dc2626; font-weight: 600; font-size: 11px;">Filamer Christian University</p>
+                            <p style="font-style: italic; font-size: 10px;">Currently Enrolled - 3rd Year</p>
+                        </div>
+                    </div>
+
+                    <div class="pdf-resume-section">
+                        <div class="pdf-resume-section-title">Technical Skills</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                            <div style="padding: 8px; background: #f9fafb; border-radius: 4px;">
+                                <h4 style="font-size: 12px; margin-bottom: 4px;">Web Development</h4>
+                                <p style="font-size: 10px;">HTML5, CSS3, JavaScript, Responsive Design</p>
+                            </div>
+                            <div style="padding: 8px; background: #f9fafb; border-radius: 4px;">
+                                <h4 style="font-size: 12px; margin-bottom: 4px;">Cybersecurity</h4>
+                                <p style="font-size: 10px;">Security Assessments, Network Security, IT Infrastructure Security</p>
+                            </div>
+                            <div style="padding: 8px; background: #f9fafb; border-radius: 4px;">
+                                <h4 style="font-size: 12px; margin-bottom: 4px;">Data Management</h4>
+                                <p style="font-size: 10px;">Data Analysis, Database Management, Data Storage & Retrieval</p>
+                            </div>
+                            <div style="padding: 8px; background: #f9fafb; border-radius: 4px;">
+                                <h4 style="font-size: 12px; margin-bottom: 4px;">System Administration</h4>
+                                <p style="font-size: 10px;">System Management, Network Administration, IT Consulting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pdf-resume-section">
+                        <div class="pdf-resume-section-title">Projects & Experience</div>
+                        <div class="pdf-resume-item">
+                            <h4>Portfolio Website</h4>
+                            <p>Developed a professional portfolio website showcasing skills, projects, and contact information. 
+                            Implemented responsive design using HTML, CSS, and JavaScript with modern UI/UX principles.</p>
+                        </div>
+                        <div class="pdf-resume-item">
+                            <h4>Cybersecurity Services</h4>
+                            <p>Conducted security assessments for local businesses, focusing on IT infrastructure and providing 
+                            recommendations to enhance security measures.</p>
+                        </div>
+                        <div class="pdf-resume-item">
+                            <h4>IT Consulting</h4>
+                            <p>Provided consulting services for small businesses on leveraging technology to improve operations, 
+                            enhance security, and adopt new software solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Best Certificates -->
+            <div class="pdf-section page-break">
+                <div class="pdf-section-title">Best Certificates</div>
+                
+                <div class="pdf-certificate-item" style="page-break-after: auto;">
+                    <div class="pdf-certificate-title">1. Using Veo 3 for AI-Generated Video</div>
+                    <img src="certificate/Screenshot 2026-01-06 184157.png" alt="Using Veo 3 for AI-Generated Video certificate" />
+                </div>
+
+                <div class="pdf-certificate-item" style="page-break-before: auto; page-break-after: auto;">
+                    <div class="pdf-certificate-title">2. OpenAI API: Image Generation with DALL-E</div>
+                    <img src="certificate/Screenshot 2026-01-06 184248.png" alt="OpenAI API: Image Generation with DALL-E certificate" />
+                </div>
+
+                <div class="pdf-certificate-item" style="page-break-before: auto;">
+                    <div class="pdf-certificate-title">3. Boosting Your Influence Skills with Generative AI</div>
+                    <img src="certificate/Screenshot 2026-01-06 184334.png" alt="Boosting Your Influence Skills with Generative AI certificate" />
+                </div>
+            </div>
+
+            <!-- 3 Best Works -->
+            <div class="pdf-section page-break">
+                <div class="pdf-section-title">Best Works</div>
+                
+                <div class="pdf-project-item">
+                    <div class="pdf-project-title">1. User Management System</div>
+                    <div class="pdf-project-desc">
+                        A CRUD-based web application for managing user profiles, including gender,
+                        birthdate, address, and contact details with edit and delete actions.
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px;">
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">Django</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">Bootstrap</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">CRUD</span>
+                    </div>
+                    <img src="Screenshot 2026-01-06 194332.png" alt="User Management System" class="pdf-project-img" />
+                </div>
+
+                <div class="pdf-project-item">
+                    <div class="pdf-project-title">2. Online Activities Management System</div>
+                    <div class="pdf-project-desc">
+                        A secure login interface for an activities management platform with a soft
+                        gradient background and focused form design for better user experience.
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px;">
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">HTML & CSS</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">UI Design</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">Authentication</span>
+                    </div>
+                    <img src="Screenshot 2026-01-08 225524.png" alt="Online Activities Management System Login Interface" class="pdf-project-img" />
+                </div>
+
+                <div class="pdf-project-item">
+                    <div class="pdf-project-title">3. Portfolio Website</div>
+                    <div class="pdf-project-desc">
+                        Developed a professional portfolio website showcasing skills, projects, and contact information. 
+                        Implemented responsive design using HTML, CSS, and JavaScript with modern UI/UX principles.
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">HTML</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">CSS</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">JavaScript</span>
+                        <span style="padding: 2px 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; border-radius: 3px; font-size: 10px; font-weight: 500;">Responsive Design</span>
+                    </div>
+                    <img src="Screenshot 2026-01-08 225617.png" alt="Portfolio Website" class="pdf-project-img" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen View Content -->
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8 no-print">
             <section class="space-y-4">
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
                     Application Letter
@@ -139,39 +550,128 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Email Signature section -->
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
-                Email Signature
-            </h1>
-            <section class="bg-white/5 border border-white/20 rounded-3xl shadow-xl shadow-red-700/10 p-6 sm:p-9 lg:p-20 text-slate-100 space-y-6">
-                <div class="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
-                    <!-- Profile Picture -->
-                    <div class="flex-shrink-0">
-                        <img src="Screenshot 2025-11-12 202105.png" alt="Jomar Nobleza" class="w-32 h-32 sm:w-60 sm:h-60 rounded-2xl object-cover border-2 border-red-700/50 shadow-lg">
-                    </div>
-                    
-                    <!-- Signature Details -->
-                    <div class="flex-1 space-y-3">
-                        <h2 class="text-3xl sm:text-5xl font-bold text-white">Jomar Nobleza</h2>
-                        <div class="space-y-2 text-3xl sm:text-2xl">
-                            <p class="text-slate-300">
-                                <span class="font-semibold text-red-200">Contact:</span> (+63) 931 722 2221
-                            </p>
-                             <p class="text-slate-300">
-                                <span class="font-semibold text-red-200">Email Address:</span> jomarnobleza011@gmail.com
-                            </p>
-                            <p class="text-slate-300">
-                                <span class="font-semibold text-red-200">School:</span> Filamer Christian University
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
             </section>
         </div>
     </main>
+
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('pdf-content');
+            const button = event?.target || document.querySelector('button[onclick="downloadPDF()"]');
+            
+            // Disable button during generation
+            if (button) {
+                button.disabled = true;
+                button.innerHTML = '⏳ Generating PDF...';
+            }
+            
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+            
+            // Force reflow to ensure content is rendered
+            element.offsetHeight;
+            
+            // Wait for images to load
+            const images = element.querySelectorAll('img');
+            let imagesLoaded = 0;
+            const totalImages = images.length;
+            
+            // Preload images
+            const imagePromises = Array.from(images).map(img => {
+                return new Promise((resolve, reject) => {
+                    if (img.complete && img.naturalHeight !== 0) {
+                        resolve(img);
+                    } else {
+                        img.onload = () => resolve(img);
+                        img.onerror = () => resolve(img); // Continue even if image fails
+                        // Timeout after 5 seconds
+                        setTimeout(() => resolve(img), 5000);
+                    }
+                });
+            });
+            
+            Promise.all(imagePromises).then(() => {
+                // Small delay to ensure rendering
+                setTimeout(() => {
+                    generatePDF();
+                }, 100);
+            });
+            
+            function generatePDF() {
+                const opt = {
+                    margin: [15, 15, 15, 15],
+                    filename: 'Jomar_Nobleza_Application_Letter.pdf',
+                    image: { 
+                        type: 'jpeg', 
+                        quality: 0.98 
+                    },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        logging: false,
+                        letterRendering: true,
+                        allowTaint: false,
+                        backgroundColor: '#ffffff',
+                        removeContainer: true,
+                        windowWidth: element.scrollWidth,
+                        windowHeight: element.scrollHeight
+                    },
+                    jsPDF: { 
+                        unit: 'mm', 
+                        format: 'a4', 
+                        orientation: 'portrait',
+                        compress: true,
+                        precision: 16
+                    },
+                    pagebreak: { 
+                        mode: ['css', 'legacy'],
+                        before: '.page-break',
+                        after: '.page-break-after',
+                        avoid: ['.avoid-break', '.pdf-certificate-item', '.pdf-project-item', '.pdf-section']
+                    }
+                };
+
+                html2pdf().set(opt).from(element).save().then(() => {
+                    element.style.display = 'none';
+                    if (button) {
+                        button.disabled = false;
+                        button.innerHTML = '📥 Download PDF';
+                    }
+                }).catch(err => {
+                    console.error('PDF generation error:', err);
+                    element.style.display = 'none';
+                    if (button) {
+                        button.disabled = false;
+                        button.innerHTML = '📥 Download PDF';
+                    }
+                    alert('Error generating PDF. Please try again.');
+                });
+            }
+        }
+
+        // Also allow printing
+        window.addEventListener('beforeprint', function() {
+            const pdfContent = document.getElementById('pdf-content');
+            if (pdfContent) {
+                pdfContent.style.display = 'block';
+                pdfContent.style.visibility = 'visible';
+            }
+        });
+
+        window.addEventListener('afterprint', function() {
+            const pdfContent = document.getElementById('pdf-content');
+            if (pdfContent) {
+                pdfContent.style.display = 'none';
+            }
+        });
+        
+        // Add print button functionality
+        function printPDF() {
+            const element = document.getElementById('pdf-content');
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+            window.print();
+        }
+    </script>
 </body>
 </html>
-
-
